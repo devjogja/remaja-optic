@@ -162,7 +162,7 @@
         $.each(qty, function(index) {
             i = 0;
             while (i < qty[index]) {
-                htmltext += '<div style="margin-bottom: 14px; flex: 0 0 25%; max-width: 25%;">';
+                htmltext += '<div style="margin-bottom: 22px; flex: 0 0 25%; max-width: 25%; font-size: 11pt;">';
                 if ($('input[name="name"]').is(":checked")) {
                     htmltext += product_name[index] + '<br>';
                     htmltext += '<img style="width:2.5cm;" src="data:image/png;base64,' + barcode_image[index] + '" alt="barcode" /><br>';
