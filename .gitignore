@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/stock_count
+/public/downloads
 /storage
 /.idea
 /.vscode
