@@ -323,10 +323,10 @@
                         <div id="debitCard">
                             <div class='row'>
                                 <div class='col-sm-4'>
-                                    <input type="text" name="debit_card_bank_name" id='debit_card_bank_name' placeholder="Bank Debit Card" class="form-control">
+                                    <input type="text" name="bank_name" id='bank_name' placeholder="Bank Debit Card" class="form-control">
                                 </div>
                                 <div class='col-sm-8'>
-                                    <input type="number" name="debit_card_no" id='debit_card_no' placeholder="Debit Card Nomor" class="form-control">
+                                    <input type="text" name="bank_number" id='bank_number' placeholder="Debit Card Nomor" class="form-control numkey">
                                 </div>
                             </div>
                         </div>

@@ -442,6 +442,7 @@ class ComposerStaticInit518c4a18248cb2f43e7c768e2e95516a
         'App\\GeneralSetting' => __DIR__ . '/../..' . '/app/GeneralSetting.php',
         'App\\GiftCard' => __DIR__ . '/../..' . '/app/GiftCard.php',
         'App\\GiftCardRecharge' => __DIR__ . '/../..' . '/app/GiftCardRecharge.php',
+        'App\\HasilRefraksi' => __DIR__ . '/../..' . '/app/HasilRefraksi.php',
         'App\\Http\\Controllers\\AdjustmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdjustmentController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',

@@ -21,6 +21,7 @@ return array(
     'App\\GeneralSetting' => $baseDir . '/app/GeneralSetting.php',
     'App\\GiftCard' => $baseDir . '/app/GiftCard.php',
     'App\\GiftCardRecharge' => $baseDir . '/app/GiftCardRecharge.php',
+    'App\\HasilRefraksi' => $baseDir . '/app/HasilRefraksi.php',
     'App\\Http\\Controllers\\AdjustmentController' => $baseDir . '/app/Http/Controllers/AdjustmentController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',

@@ -8,6 +8,6 @@ class HasilRefraksi extends Model
 {
     protected $table = 'hasil_refraksi';
     protected $fillable = [
-        "payment_id", "sphr", "cylr", "axisr", "addr", "sphl", "cyll", "axisl", "addl", "pdd"
+        "sale_id", "sphr", "cylr", "axisr", "addr", "sphl", "cyll", "axisl", "addl", "pdd"
     ];
 }

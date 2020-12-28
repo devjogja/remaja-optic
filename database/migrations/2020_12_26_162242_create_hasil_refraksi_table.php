@@ -15,7 +15,7 @@ class CreateHasilRefraksiTable extends Migration
     {
         Schema::create('hasil_refraksi', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('payment_id');
+            $table->integer('sale_id');
             $table->string('sphr')->nullable();
             $table->string('cylr')->nullable();
             $table->string('axisr')->nullable();

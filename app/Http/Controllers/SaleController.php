@@ -21,6 +21,7 @@ use App\Product_Sale;
 use App\Product_Store;
 use App\Payment;
 use App\GiftCard;
+use App\HasilRefraksi;
 use App\PaymentWithCheque;
 use App\PaymentWithGiftCard;
 use App\PaymentWithCreditCard;
@@ -32,6 +33,7 @@ use Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Mail\UserNotification;
+use App\PaymentWithDebitCard;
 use Illuminate\Support\Facades\Mail;
 use Srmklive\PayPal\Services\ExpressCheckout;
 use Srmklive\PayPal\Services\AdaptivePayments;
@@ -210,6 +212,8 @@ class SaleController extends Controller
 
             $ezpos_payment_data = Payment::latest()->first();
             $data['payment_id'] = $ezpos_payment_data->id;
+            $data['sale_id'] = $ezpos_sale_data->id;
+            HasilRefraksi::create($data);
             if ($paying_method == 'Credit Card') {
                 $ezpos_pos_setting_data = PosSetting::find(1);
                 Stripe::setApiKey($ezpos_pos_setting_data->stripe_secret_key);
@@ -727,6 +731,7 @@ class SaleController extends Controller
         $ezpos_customer_data = Customer::find($ezpos_sale_data->customer_id);
         $ezpos_user_data = User::find($ezpos_sale_data->user_id);
         $ezpos_payment_data = Payment::where('sale_id', $id)->get();
+        $hasil_refraksi = HasilRefraksi::where('sale_id', $id)->first();
 
         $numberToWords = new NumberToWords();
         if (\App::getLocale() == 'ar')
@@ -735,7 +740,7 @@ class SaleController extends Controller
             $numberTransformer = $numberToWords->getNumberTransformer(\App::getLocale());
         $numberInWords = $numberTransformer->toWords($ezpos_sale_data->grand_total);
 
-        return view('sale.invoice', compact('ezpos_sale_data', 'ezpos_product_sale_data', 'ezpos_store_data', 'ezpos_customer_data', 'ezpos_user_data', 'ezpos_payment_data', 'numberInWords'));
+        return view('sale.invoice', compact('ezpos_sale_data', 'ezpos_product_sale_data', 'ezpos_store_data', 'ezpos_customer_data', 'ezpos_user_data', 'ezpos_payment_data', 'numberInWords', 'hasil_refraksi'));
     }
 
     public function addPayment(Request $request)
